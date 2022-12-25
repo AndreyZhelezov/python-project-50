@@ -1,4 +1,5 @@
 import argparse
+from gendiff import generate_diff
 
 
 def main():
@@ -6,7 +7,12 @@ def main():
     parser.add_argument('first_file')
     parser.add_argument('second_file')
     parser.add_argument('-f', '--format', help='set format of output')
-    parser.parse_args()
+    args = parser.parse_args()
+
+    file1_path = args.first_file
+    file2_path = args.second_file
+
+    print(generate_diff(file1_path, file2_path))
 
 
 if __name__ == '__main__':
