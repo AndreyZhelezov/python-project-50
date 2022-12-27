@@ -11,9 +11,10 @@ packages = [
 gendiff = "gendiff.scripts.gendiff_script:main"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = ">=3.8.1,<4.0"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
