@@ -24,7 +24,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7
 
 [[package]]
 name = "coverage"
-version = "7.0.1"
+version = "7.0.3"
 description = "Code coverage measurement for Python"
 category = "dev"
 optional = false
@@ -148,6 +148,14 @@ pytest = ">=4.6"
 testing = ["fields", "hunter", "process-tests", "six", "pytest-xdist", "virtualenv"]
 
 [[package]]
+name = "pyyaml"
+version = "6.0"
+description = "YAML parser and emitter for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
@@ -158,7 +166,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.1,<4.0"
-content-hash = "f8469256927d4c7c0760dbb6ab374e3b359cbd720c12bd17bf61b07fc67e77ce"
+content-hash = "34c064be203c00f1f417062ced4f2004dcf15c5069ee4f05ec002b8383047b61"
 
 [metadata.files]
 attrs = []
@@ -174,4 +182,5 @@ pycodestyle = []
 pyflakes = []
 pytest = []
 pytest-cov = []
+pyyaml = []
 tomli = []

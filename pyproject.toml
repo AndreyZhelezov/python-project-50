@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.2.0"
+version = "0.3.0"
 description = "Differences evaluator."
 authors = ["Andrey Zhelezov <azhelezov@mail.ru>"]
 packages = [
@@ -12,6 +12,7 @@ gendiff = "gendiff.scripts.gendiff_script:main"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
+PyYAML = "^6.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^6.0.0"
