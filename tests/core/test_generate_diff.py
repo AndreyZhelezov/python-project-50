@@ -41,3 +41,7 @@ def test_generate_diff_tree(cwd, result_tree):
     f1_path = f'{cwd}/../fixtures/test_generate_diff/file1_tree.json'
     f2_path = f'{cwd}/../fixtures/test_generate_diff/file2_tree.json'
     assert generate_diff(f1_path, f2_path) == result_tree
+
+    f1_path = f'{cwd}/../fixtures/test_generate_diff/file1_tree.yaml'
+    f2_path = f'{cwd}/../fixtures/test_generate_diff/file2_tree.yaml'
+    assert generate_diff(f1_path, f2_path) == result_tree
