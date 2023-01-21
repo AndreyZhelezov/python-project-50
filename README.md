@@ -11,3 +11,4 @@
 #### Gendiff help and flat files diff ascinemas
 [![asciicast](https://asciinema.org/a/547887.svg)](https://asciinema.org/a/547887)
 [![asciicast](https://asciinema.org/a/549991.svg)](https://asciinema.org/a/549991)
+[![asciicast](https://asciinema.org/a/553336.svg)](https://asciinema.org/a/553336)
