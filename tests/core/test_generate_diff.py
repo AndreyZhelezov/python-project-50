@@ -92,7 +92,7 @@ expected_diff = [(
         ), (
             'setting1', {
                 'key_status': 'stay',
-                'values': {'old': 'Value 1', 'new': 'Value 1'},
+                'values': {'only': 'Value 1'},
                 'children': []}
         ), (
             'setting2', {
@@ -132,7 +132,7 @@ expected_diff = [(
                 ), (
                     'key', {
                         'key_status': 'stay',
-                        'values': {'old': 'value', 'new': 'value'},
+                        'values': {'only': 'value'},
                         'children': []}
                 ), (
                     'ops', {
@@ -153,7 +153,7 @@ expected_diff = [(
         ), (
             'foo', {
                 'key_status': 'stay',
-                'values': {'old': 'bar', 'new': 'bar'},
+                'values': {'only': 'bar'},
                 'children': []}
         ), (
             'nest', {
