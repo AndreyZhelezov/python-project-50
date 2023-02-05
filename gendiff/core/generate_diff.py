@@ -1,4 +1,5 @@
-import gendiff.core.stylish_format as stylish_format
+import gendiff.formaters.stylish_format as stylish_format
+import gendiff.formaters.plain_format as plain_format
 from gendiff.core.parse_data import parse_data
 
 
@@ -40,14 +41,16 @@ def get_diff(dict1, dict2):  # noqa: C901
     return result
 
 
-def format_output(diff_data, _type='stylish'):
+def format_output(diff_data, _type):
     if _type == 'stylish':
         return stylish_format.process_children(diff_data, 0)
+    if _type == 'plain':
+        return plain_format.process_children(diff_data)
 
 
-def generate_diff(file1_path, file2_path):
+def generate_diff(file1_path, file2_path, _type):
     file1_dict = parse_data(file1_path)
     file2_dict = parse_data(file2_path)
     diff_dict = get_diff(file1_dict, file2_dict)
-    result = format_output(diff_dict)
+    result = format_output(diff_dict, _type)
     return result

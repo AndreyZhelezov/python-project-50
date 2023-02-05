@@ -80,7 +80,7 @@ dict2 = {
     }
 }
 
-expected_diff = [(
+expected_diff_data = [(
     'common', {
         'key_status': 'stay',
         'values': {},
@@ -219,35 +219,52 @@ output_stylish = """{
 }
 """
 
+output_plain = """Property 'common.follow' was added with value: false
+Property 'common.setting2' was removed
+Property 'common.setting3' was updated. From true to null
+Property 'common.setting4' was added with value: 'blah blah'
+Property 'common.setting5' was added with value: [complex value]
+Property 'common.setting6.doge.wow' was updated. From '' to 'so much'
+Property 'common.setting6.ops' was added with value: 'vops'
+Property 'group1.baz' was updated. From 'bas' to 'bars'
+Property 'group1.nest' was updated. From [complex value] to 'str'
+Property 'group2' was removed
+Property 'group3' was added with value: [complex value]
+"""
+
 
 def test_get_diff():
-    assert get_diff(dict1, dict2) == expected_diff
+    assert get_diff(dict1, dict2) == expected_diff_data
 
 
-def test_format_output():
-    assert format_output(expected_diff) == output_stylish
+def test_format_output_stylish():
+    assert format_output(expected_diff_data, _type='stylish') == output_stylish
+
+
+def test_format_output_plain():
+    assert format_output(expected_diff_data, _type='plain') == output_plain
 
 
 def test_generate_diff(cwd, result):
 
     f1_path = f'{cwd}/../fixtures/test_generate_diff/file1.json'
     f2_path = f'{cwd}/../fixtures/test_generate_diff/file2.json'
-    assert generate_diff(f1_path, f2_path) == result
+    assert generate_diff(f1_path, f2_path, 'stylish') == result
 
     f1_path = f'{cwd}/../fixtures/test_generate_diff/file1.yaml'
     f2_path = f'{cwd}/../fixtures/test_generate_diff/file2.yaml'
-    assert generate_diff(f1_path, f2_path) == result
+    assert generate_diff(f1_path, f2_path, 'stylish') == result
 
     f1_path = f'{cwd}/../fixtures/test_generate_diff/file1.yml'
     f2_path = f'{cwd}/../fixtures/test_generate_diff/file2.yml'
-    assert generate_diff(f1_path, f2_path) == result
+    assert generate_diff(f1_path, f2_path, 'stylish') == result
 
 
 def test_generate_diff_tree(cwd, result_tree):
     f1_path = f'{cwd}/../fixtures/test_generate_diff/file1_tree.json'
     f2_path = f'{cwd}/../fixtures/test_generate_diff/file2_tree.json'
-    assert generate_diff(f1_path, f2_path) == result_tree
+    assert generate_diff(f1_path, f2_path, 'stylish') == result_tree
 
     f1_path = f'{cwd}/../fixtures/test_generate_diff/file1_tree.yaml'
     f2_path = f'{cwd}/../fixtures/test_generate_diff/file2_tree.yaml'
-    assert generate_diff(f1_path, f2_path) == result_tree
+    assert generate_diff(f1_path, f2_path, 'stylish') == result_tree
