@@ -12,7 +12,7 @@ def get_diff(dict1, dict2):  # noqa: C901
 
     def get_stay_values(_key):
         if dict1[_key] == dict2[_key]:
-            return {'only': dict1[_key]}, []
+            return {'equal': dict1[_key]}, []
         if not isinstance(dict1[_key], type(dict2[_key]))\
                 or not isinstance(dict1[_key], dict):
             return {'old': dict1[_key], 'new': dict2[_key]}, []

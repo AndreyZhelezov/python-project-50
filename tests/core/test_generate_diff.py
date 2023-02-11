@@ -92,7 +92,7 @@ expected_diff_data = [(
         ), (
             'setting1', {
                 'key_status': 'stay',
-                'values': {'only': 'Value 1'},
+                'values': {'equal': 'Value 1'},
                 'children': []}
         ), (
             'setting2', {
@@ -132,7 +132,7 @@ expected_diff_data = [(
                 ), (
                     'key', {
                         'key_status': 'stay',
-                        'values': {'only': 'value'},
+                        'values': {'equal': 'value'},
                         'children': []}
                 ), (
                     'ops', {
@@ -153,7 +153,7 @@ expected_diff_data = [(
         ), (
             'foo', {
                 'key_status': 'stay',
-                'values': {'only': 'bar'},
+                'values': {'equal': 'bar'},
                 'children': []}
         ), (
             'nest', {
