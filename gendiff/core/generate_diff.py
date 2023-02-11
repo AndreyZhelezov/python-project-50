@@ -51,7 +51,7 @@ def format_output(diff_data, _type):
         return json_format.process_children(diff_data)
 
 
-def generate_diff(file1_path, file2_path, _type):
+def generate_diff(file1_path, file2_path, _type='stylish'):
     file1_dict = parse_data(file1_path)
     file2_dict = parse_data(file2_path)
     diff_data = get_diff(file1_dict, file2_dict)
