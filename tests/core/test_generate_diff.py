@@ -232,6 +232,205 @@ Property 'group2' was removed
 Property 'group3' was added with value: [complex value]
 """
 
+output_json = """[
+    [
+        "common",
+        {
+            "key_status": "stay",
+            "values": {},
+            "children": [
+                [
+                    "follow",
+                    {
+                        "key_status": "appear",
+                        "values": {
+                            "only": false
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "setting1",
+                    {
+                        "key_status": "stay",
+                        "values": {
+                            "equal": "Value 1"
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "setting2",
+                    {
+                        "key_status": "disappear",
+                        "values": {
+                            "only": 200
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "setting3",
+                    {
+                        "key_status": "stay",
+                        "values": {
+                            "old": true,
+                            "new": null
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "setting4",
+                    {
+                        "key_status": "appear",
+                        "values": {
+                            "only": "blah blah"
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "setting5",
+                    {
+                        "key_status": "appear",
+                        "values": {
+                            "only": {
+                                "key5": "value5"
+                            }
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "setting6",
+                    {
+                        "key_status": "stay",
+                        "values": {},
+                        "children": [
+                            [
+                                "doge",
+                                {
+                                    "key_status": "stay",
+                                    "values": {},
+                                    "children": [
+                                        [
+                                            "wow",
+                                            {
+                                                "key_status": "stay",
+                                                "values": {
+                                                    "old": "",
+                                                    "new": "so much"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ],
+                            [
+                                "key",
+                                {
+                                    "key_status": "stay",
+                                    "values": {
+                                        "equal": "value"
+                                    },
+                                    "children": []
+                                }
+                            ],
+                            [
+                                "ops",
+                                {
+                                    "key_status": "appear",
+                                    "values": {
+                                        "only": "vops"
+                                    },
+                                    "children": []
+                                }
+                            ]
+                        ]
+                    }
+                ]
+            ]
+        }
+    ],
+    [
+        "group1",
+        {
+            "key_status": "stay",
+            "values": {},
+            "children": [
+                [
+                    "baz",
+                    {
+                        "key_status": "stay",
+                        "values": {
+                            "old": "bas",
+                            "new": "bars"
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "foo",
+                    {
+                        "key_status": "stay",
+                        "values": {
+                            "equal": "bar"
+                        },
+                        "children": []
+                    }
+                ],
+                [
+                    "nest",
+                    {
+                        "key_status": "stay",
+                        "values": {
+                            "old": {
+                                "key": "value"
+                            },
+                            "new": "str"
+                        },
+                        "children": []
+                    }
+                ]
+            ]
+        }
+    ],
+    [
+        "group2",
+        {
+            "key_status": "disappear",
+            "values": {
+                "only": {
+                    "abc": 12345,
+                    "deep": {
+                        "id": 45
+                    }
+                }
+            },
+            "children": []
+        }
+    ],
+    [
+        "group3",
+        {
+            "key_status": "appear",
+            "values": {
+                "only": {
+                    "deep": {
+                        "id": {
+                            "number": 45
+                        }
+                    },
+                    "fee": 100500
+                }
+            },
+            "children": []
+        }
+    ]
+]"""
+
 
 def test_get_diff():
     assert get_diff(dict1, dict2) == expected_diff_data
@@ -243,6 +442,10 @@ def test_format_output_stylish():
 
 def test_format_output_plain():
     assert format_output(expected_diff_data, _type='plain') == output_plain
+
+
+def test_format_output_json():
+    assert format_output(expected_diff_data, _type='json') == output_json
 
 
 def test_generate_diff(cwd, result):

@@ -8,8 +8,9 @@
 ### GitHub Actions status:
 [![Gendiff-CI](https://github.com/AndreyZhelezov/python-project-50/actions/workflows/gendiff-ci.yml/badge.svg)](https://github.com/AndreyZhelezov/python-project-50/actions/workflows/gendiff-ci.yml)
 
-#### Gendiff help and flat files diff ascinemas
+#### Gendiff help and usage ascinemas
 [![asciicast](https://asciinema.org/a/547887.svg)](https://asciinema.org/a/547887)
 [![asciicast](https://asciinema.org/a/549991.svg)](https://asciinema.org/a/549991)
 [![asciicast](https://asciinema.org/a/553336.svg)](https://asciinema.org/a/553336)
 [![asciicast](https://asciinema.org/a/557535.svg)](https://asciinema.org/a/557535)
+[![asciicast](https://asciinema.org/a/559062.svg)](https://asciinema.org/a/559062)

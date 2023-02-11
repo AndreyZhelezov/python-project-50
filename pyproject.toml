@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.4.1"
+version = "0.5.0"
 description = "Differences evaluator."
 authors = ["Andrey Zhelezov <azhelezov@mail.ru>"]
 packages = [
