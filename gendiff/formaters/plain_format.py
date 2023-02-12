@@ -44,4 +44,6 @@ def process_children(children, parent_acc='') -> str:
             out_string += suffix
         else:
             out_string += f"Property '{prefix}' {suffix}\n"
+    if parent_acc == '':
+        out_string = out_string.rstrip()
     return out_string

@@ -42,5 +42,5 @@ def process_children(children, level) -> str:
     for key, meta in children:
         string_list = list(zip(get_keys(key, meta, level + 1), get_values(meta, level)))
         out_string += ''.join([f'{t[0]}: {t[1]}' for t in string_list])
-    out_string += ind_str * level + '}\n'
+    out_string += ind_str * level + '}' + ('\n' if level > 0 else '')
     return out_string
