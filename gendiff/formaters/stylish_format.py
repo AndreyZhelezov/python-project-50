@@ -18,7 +18,7 @@ def get_keys(key, meta, level) -> list:
 
 def get_value_repr(value, level) -> str:
     if value == '':
-        return ''
+        return ' '
     if isinstance(value, bool):
         return f' {str(value).lower()}'
     if value is None:
