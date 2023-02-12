@@ -193,7 +193,7 @@ output_stylish = """{
         }
         setting6: {
             doge: {
-              - wow: 
+              - wow:
               + wow: so much
             }
             key: value
