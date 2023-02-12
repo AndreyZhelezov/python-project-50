@@ -32,7 +32,8 @@ dict1 = {
             'doge': {
                 'wow': ''
             }
-        }
+        },
+        'setting7': 0
     },
     'group1': {
         'baz': 'bas',
@@ -63,7 +64,8 @@ dict2 = {
             'doge': {
                 'wow': 'so much'
             }
-        }
+        },
+        'setting7': '0'
     },
     'group1': {
         'foo': 'bar',
@@ -140,6 +142,11 @@ expected_diff_data = [(
                         'values': {'only': 'vops'},
                         'children': []}
                 )]}
+        ), (
+            'setting7', {
+                'key_status': 'stay',
+                'values': {'old': 0, 'new': '0'},
+                'children': []}
         )]}
 ), (
     'group1', {
@@ -192,6 +199,8 @@ output_stylish = """{
             key: value
           + ops: vops
         }
+      - setting7: 0
+      + setting7: 0
     }
     group1: {
       - baz: bas
@@ -225,6 +234,7 @@ Property 'common.setting4' was added with value: 'blah blah'
 Property 'common.setting5' was added with value: [complex value]
 Property 'common.setting6.doge.wow' was updated. From '' to 'so much'
 Property 'common.setting6.ops' was added with value: 'vops'
+Property 'common.setting7' was updated. From 0 to '0'
 Property 'group1.baz' was updated. From 'bas' to 'bars'
 Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
@@ -347,6 +357,17 @@ output_json = """[
                                 }
                             ]
                         ]
+                    }
+                ],
+                [
+                    "setting7",
+                    {
+                        "key_status": "stay",
+                        "values": {
+                            "old": 0,
+                            "new": "0"
+                        },
+                        "children": []
                     }
                 ]
             ]
